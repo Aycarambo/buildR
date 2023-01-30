@@ -2,9 +2,12 @@
 
 Url du back directus : http://localhost:8055/
 
-Connexion
+## Connexion
+
 login `admin@example.com`
 mdp `testpass`
+
+## Parametrer l'api
 
 Penser à modifier les permissions de l'appli pour le groupe "Public".
 Mettre tout en `all`
