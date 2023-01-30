@@ -29,8 +29,6 @@ const App = () => {
         <Routes>
           <Route path="/connexion" element={<ConnexionInscription />} />
           <Route path="/inscription" element={<Inscription />} />
-          <Route path="/prix" element={<Budget />} />
-          <Route path="/jobs" element={<Jobs />} />
         </Routes>
       </DirectusContext.Provider>
     </BrowserRouter>

@@ -34,10 +34,7 @@ const Jobs = (props) => {
               return (
                 <li key={idx} className="category">
                   <button>
-                    <img
-                      src="https://picsum.photos/200/300?random=2"
-                      alt={job.label}
-                    />
+                    <img src="https://picsum.photos/200/300?random=2" alt="" />
                     <p>{job.label}</p>
                   </button>
                 </li>
