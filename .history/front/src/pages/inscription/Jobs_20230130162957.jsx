@@ -16,22 +16,21 @@ const Jobs = () => {
   }, []);
 
   return (
-    <>
-      <header className="inscription__header">
-        <button className="header__back"></button>
-        <h1 className="header__title">Choisir vos catégories</h1>
-        <h2 className="header__subtitle">Sélectionner les différents métiers</h2>
-      </header>
-        <main className="choiceCategory">
-
+    <main>
+    <header>
+      <button>
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1.85742L1 7.00028M1 7.00028L6 12.1431M1 7.00028H17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </header>
+      <p>test</p>
       {jobs ? (
-        <ul className="categories">
+        <ul>
           {jobs.map((job, idx) => {
             return (
-              <li key={idx} className="category">
+              <li key={idx}>
                 <button>
-                <img src="https://picsum.photos/200/300?random=2"/>
-                <p>{job.label}</p>
+                  <img src="" alt="" />
+                  <p>{job.label}</p>
                 </button>
               </li>
             );
@@ -40,10 +39,7 @@ const Jobs = () => {
       ) : (
         <p>Pas de données</p>
       )}
-      <button className="btn choiceCategory__btn">Suite</button>
     </main>
-    </>
-
   );
 };
 
