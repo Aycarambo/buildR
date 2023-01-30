@@ -17,7 +17,7 @@ const buildSCSS = () => {
     .pipe(postcss())
     .pipe(
       rename({
-        basename: "ew",
+        basename: "app",
         extname: ".css",
       })
     )
