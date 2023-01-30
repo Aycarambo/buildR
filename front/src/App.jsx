@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ConnexionInscription from "./pages/ConnexionInscription";
+import Jobs from "./pages/inscription/Jobs";
 import Layout from "./pages/Layout";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       </Routes>
       <Routes>
         <Route path="/connexion" element={<ConnexionInscription />} />
+        <Route path="/jobs" element={<Jobs />} />
       </Routes>
     </BrowserRouter>
   );
