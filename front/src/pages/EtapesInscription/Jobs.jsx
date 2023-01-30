@@ -20,6 +20,7 @@ const Jobs = () => {
       <header className="inscription__header">
         <button className="header__back"></button>
         <h1 className="header__title">Choisir vos catégories</h1>
+<<<<<<< HEAD:front/src/pages/inscription/Jobs.jsx
         <h2 className="header__subtitle">Sélectionner les différents métiers</h2>
       </header>
         <main className="choiceCategory">
@@ -44,6 +45,32 @@ const Jobs = () => {
     </main>
     </>
 
+=======
+        <h2 className="header__subtitle">
+          Sélectionner les différents métiers
+        </h2>
+      </header>
+      <main className="choiceCategory">
+        {jobs ? (
+          <ul className="categories">
+            {jobs.map((job, idx) => {
+              return (
+                <li key={idx} className="category">
+                  <button>
+                    <img src="https://picsum.photos/200/300?random=2" alt="" />
+                    <p>{job.label}</p>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>Pas de données</p>
+        )}
+        <button className="btn choiceCategory__btn">Suite</button>
+      </main>
+    </>
+>>>>>>> main:front/src/pages/EtapesInscription/Jobs.jsx
   );
 };
 

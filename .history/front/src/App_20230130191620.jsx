@@ -18,6 +18,20 @@ const directus = new Directus();
 const App = () => {
   return (
     <BrowserRouter>
+<<<<<<< HEAD
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/likes" element={<Likes />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/account" element={<Account />} />
+        </Route>
+      </Routes>
+      <Routes>
+        <Route path="/connexion" element={<ConnexionInscription />} />
+        <Route path="/jobs" element={<Jobs />} />
+      </Routes>
+=======
       <DirectusContext.Provider value={directus}>
         <Routes>
           <Route element={<Layout />}>
@@ -34,6 +48,7 @@ const App = () => {
           <Route path="/jobs" element={<Jobs />} />
         </Routes>
       </DirectusContext.Provider>
+>>>>>>> main
     </BrowserRouter>
   );
 };
