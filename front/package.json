@@ -6,13 +6,13 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.57.1",
-    "web-vitals": "^2.1.4",
-    "autoprefixer": "^10.4.13",
-    "cross-env": "^7.0.3"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
@@ -38,5 +38,8 @@
       "last 2 safari version",
       "last 2 ie version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.8.0"
   }
 }
