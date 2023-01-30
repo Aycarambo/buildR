@@ -1,16 +1,19 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import ConnexionInscription from "./pages/ConnexionInscription";
 import Layout from "./pages/Layout";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route index element={<Home />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<ConnexionInscription />} />
+        </Route>
+      </Routes>
+      <Routes>
+        <Route path="/connexion" element={<ConnexionInscription />} />
+      </Routes>
     </BrowserRouter>
   );
 };
