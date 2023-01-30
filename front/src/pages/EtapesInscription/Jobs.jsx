@@ -9,7 +9,7 @@ const Jobs = (props) => {
   if (jobs) {
     jobs?.forEach((job) => {
       if (job.selected) {
-        selectedJobs.push(job);
+        selectedJobs.push(job.label);
       }
     });
   }
@@ -74,7 +74,7 @@ const Jobs = (props) => {
         )}
         {selectedJobs.length > 0 && (
           <button
-            onClick={() => changePage(3)}
+            onClick={() => handleSubmit()}
             className="btn choiceCategory__btn"
           >
             Suite
