@@ -6,7 +6,7 @@ import Likes from "./pages/Likes";
 import Messages from "./pages/Messages";
 import Account from "./pages/Account";
 import Inscription from "./pages/Inscription";
-import Prix from "./pages/EtapesInscription/Prix";
+import Budget from "./pages/EtapesInscription/Budget";
 import Jobs from "./pages/EtapesInscription/Jobs";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
@@ -20,17 +20,15 @@ const App = () => {
       <DirectusContext.Provider value={directus}>
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<Home />} />
             <Route path="/likes" element={<Likes />} />
             <Route path="/messages" element={<Messages />} />
             <Route path="/account" element={<Account />} />
+            <Route index element={<Home />} />
           </Route>
         </Routes>
         <Routes>
           <Route path="/connexion" element={<ConnexionInscription />} />
           <Route path="/inscription" element={<Inscription />} />
-          <Route path="/prix" element={<Prix />} />
-          <Route path="/jobs" element={<Jobs />} />
         </Routes>
       </DirectusContext.Provider>
     </BrowserRouter>
