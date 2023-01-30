@@ -16,13 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-<<<<<<< Updated upstream
     "build": "react-scripts build",
     "test": "react-scripts test",
-=======
-    "build": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts build",
-    "test": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts test",
->>>>>>> Stashed changes
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
