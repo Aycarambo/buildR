@@ -8,25 +8,27 @@ const ConnexionInscription = () => {
     <main className="connexion">
       <img src={logoUrl} alt="Logo Buildr" className="connexion__logo" />
 
-      <ul className="connexion__choises">
-        <li className="btn btn--yellow">
-          <button>Connexion</button>
-        </li>
-        <li className="btn btn--border">
-          <button>Inscriptions</button>
-        </li>
-      </ul>
+      <div>
+        <ul className="connexion__choises">
+          <li className="btn btn--yellow">
+            <button>Connexion</button>
+          </li>
+          <li className="btn btn--border">
+            <button>Inscriptions</button>
+          </li>
+        </ul>
 
-      <div className="connexion__with">
-        <button>
-          <img src={logoGoogleUrl} alt="connexion avec Google" />
-        </button>
-        <button>
-          <img src={logoAppleUrl} alt="connexion avec Apple" />
-        </button>
+        <div className="connexion__with">
+          <button>
+            <img src={logoGoogleUrl} alt="connexion avec Google" />
+          </button>
+          <button>
+            <img src={logoAppleUrl} alt="connexion avec Apple" />
+          </button>
+        </div>
+
+        <p className="connexion__version">Version 1.0</p>
       </div>
-
-      <p className="connexion__version">Version 1.0</p>
     </main>
   );
 };

@@ -1,0 +1,28 @@
+.connexion__choises .btn{
+
+   &.btn--yellow button{
+      background: linear-gradient(90deg, #FCD65C -0.08%, #EDB341 100.08%);
+      margin-bottom: 16px;
+   }
+
+   &.btn--border button{
+      background: transparent;
+      border: solid 1px #000;
+   }
+
+   button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 64px;
+      border-radius: 420px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      text-transform: uppercase;
+      max-width: 230px;
+   }
+}
+
+
+
