@@ -1,0 +1,103 @@
+.choiceCategory{
+   overflow: hidden;
+
+   .choiceCategory__header{
+      padding: 32px 32px 0px 32px;
+      position: relative;
+
+      &:after{
+         position: absolute;
+         content: "";
+         height: 2px;
+         width: 100vw;
+         background: linear-gradient(90deg, #FCD65C -0.08%, #EDB341 100.08%);
+      }
+
+      .header__back{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         background: linear-gradient(90deg, #FCD65C -0.08%, #EDB341 100.08%);
+         border-radius: 50px;
+         margin-bottom: 32px;
+      }
+
+      .header__title{
+         margin-bottom: 12px;
+         font-weight: 500;
+         font-size: 1.75rem;
+      }
+
+      .header__subtitle{
+         font-weight: 400;
+         font-size: .875rem;
+         color: #828991;
+         margin-bottom: 23px;
+      }
+   }
+
+   .categories{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 32px 35px;
+      justify-content: center;
+
+      .category{
+
+         button{
+            position: relative;
+
+            img{
+               width: 130px;
+               height: 130px;
+               border-radius: 50%;
+               margin-bottom: 10px;
+               border: solid 3px #fff;
+            }
+   
+            p{
+               font-weight: 400;
+               font-size: 16px;
+            }
+
+            &:hover{
+
+               img{
+                  border: solid 3px #FCD65C;
+               }
+            }
+
+            &::after{
+               content: "";
+               height: 30px;
+               width: 30px;
+               background: #FCD65C;
+               position: absolute;
+               right: 10px;
+               top: 10px;
+               border-radius: 100px;
+            }
+         }
+
+
+      }
+   }
+
+   .btn.choiceCategory__btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 64px;
+      gap: 8px;
+      background: linear-gradient(90deg, #FCD65C -0.08%, #EDB341 100.08%);
+      border-radius: 420px;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-transform: uppercase;
+   }
+}
