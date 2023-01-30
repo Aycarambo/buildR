@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
 import { DirectusContext } from "../App";
 import Jobs from "./EtapesInscription/Jobs";
@@ -17,6 +17,9 @@ const Inscription = () => {
   const appendToState = (obj) => {
     setState({ ...state, ...obj });
   };
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   const changePage = (page) => {
     setCurrentRegistrationStep(page);
