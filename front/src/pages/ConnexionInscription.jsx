@@ -10,11 +10,11 @@ const ConnexionInscription = () => {
 
       <div>
         <ul className="connexion__choises">
-          <li className="btn btn--yellow">
-            <button>Connexion</button>
+          <li className="connexion__btn">
+            <button className="btn btn--yellow">Connexion</button>
           </li>
-          <li className="btn btn--border">
-            <button>Inscriptions</button>
+          <li className="connexion__btn">
+            <button className="btn btn--border">Inscription</button>
           </li>
         </ul>
 
