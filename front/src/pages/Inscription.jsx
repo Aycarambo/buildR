@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
-import { Directus } from "@directus/sdk";
 import { DirectusContext } from "../App";
 
 const Inscription = () => {
@@ -18,6 +17,7 @@ const Inscription = () => {
   };
 
   const handleRegister = async () => {
+    // eslint-disable-next-line
     const user = await directus.users.createOne({
       email: state.email,
       password: state.pwd,

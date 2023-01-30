@@ -1,13 +1,13 @@
 import React, { createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ConnexionInscription from "./pages/ConnexionInscription";
-import Jobs from "./pages/inscription/Jobs";
 import Home from "./pages/Home";
 import Likes from "./pages/Likes";
 import Messages from "./pages/Messages";
 import Account from "./pages/Account";
 import Inscription from "./pages/Inscription";
-import Prix from "./pages/inscription/Prix";
+import Prix from "./pages/EtapesInscription/Prix";
+import Jobs from "./pages/EtapesInscription/Jobs";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
 
