@@ -1,0 +1,28 @@
+.navbar {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: var(--clr-grey);
+  border-radius: var(--bd-radius);
+
+  &__pages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    width: 100%;
+
+    img {
+      display: block;
+      height: 3.2rem;
+      width: auto;
+    }
+  }
+}
