@@ -1,11 +1,80 @@
 :root {
-  --ff-body: "", sans-serif;
-  --ff-headings: "", sans-serif;
+  --ff-body: "MadeTommy", sans-serif;
 
-  --fs-body: "value";
-  --fs-headings: "value";
-  --fs-btn: "value";
+  --fs-body: 1rem;
+  --fs-btn: 1rem;
 
-  --lh-body: "value";
-  --fw-body: "value";
+  --lh-body: auto;
+  --fw-body: 400;
+}
+
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Black.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Black.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Black.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Black.woff2) format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_ExtraBold.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_ExtraBold.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_ExtraBold.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_ExtraBold.woff2) format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Bold.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Bold.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Bold.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Medium.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Medium.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Medium.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Regular.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Regular.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Regular.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Light.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Light.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Light.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MadeTommy";
+  src:  url(./../../font/made_tommy/otf/MadeTommy_Thin.otf  ) format("otf"), 
+        url(./../../font/made_tommy/ttf/MadeTommy_Thin.ttf  ) format("ttf"), 
+        url(./../../font/made_tommy/woff/MadeTommy_Thin.woff ) format("woff"), 
+        url(./../../font/made_tommy/woff2/MadeTommy_Thin.woff2) format("woff2");
+  font-weight: 100;
+  font-style: normal;
 }
