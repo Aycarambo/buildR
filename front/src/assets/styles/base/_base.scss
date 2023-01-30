@@ -10,11 +10,7 @@ html {
 
 body {
   font-family: var(--ff-body);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  font-weight: var(--fw-body);
   color: var(--clr-body);
-  letter-spacing: var(--ls-body);
 }
 
 a,
@@ -27,4 +23,8 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+button {
+  font-family: var(--ff-body);
 }

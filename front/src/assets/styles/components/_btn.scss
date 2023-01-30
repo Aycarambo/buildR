@@ -1,0 +1,21 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 6.4rem;
+  border-radius: 42rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  max-width: 30rem;
+  width: 100%;
+
+  &--yellow {
+    background: linear-gradient(90deg, #fcd65c -0.08%, #edb341 100.08%);
+  }
+
+  &--border {
+    outline: solid 1px var(--clr-body);
+  }
+}
