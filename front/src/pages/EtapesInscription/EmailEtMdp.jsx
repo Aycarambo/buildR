@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const EmailEtMdp = (props) => {
   const { appendToState, changePage } = props;
+
+  const [isValue, setisValue] = useState(false);
+
+  const [dataConnexion, setDataConnexion] = useState({
+    email: "",
+    pwd: "",
+  });
+
+  useEffect(() => {
+    checkIfValued();
+  }, [dataConnexion]);
+
   const handleEmailChange = (e) => {
-    appendToState({ email: e.target.value });
+    setDataConnexion({
+      ...dataConnexion,
+      email: e.target.value,
+    });
   };
+
   const handlePasswordChange = (e) => {
-    appendToState({ pwd: e.target.value });
+    setDataConnexion({
+      ...dataConnexion,
+      pwd: e.target.value,
+    });
+  };
+
+  const checkIfValued = () => {
+    if (dataConnexion.email !== "" && dataConnexion.pwd !== "") {
+      setisValue(true);
+    } else {
+      setisValue(false);
+    }
+  };
+
+  const handleClick = () => {
+    appendToState(dataConnexion);
+    changePage(2);
   };
 
   return (
@@ -16,6 +48,7 @@ const EmailEtMdp = (props) => {
         type="email"
         name="email"
         id="email"
+        value={dataConnexion.email}
         onChange={(e) => handleEmailChange(e)}
       ></input>
       <label htmlFor="pwd">Mot de passe</label>
@@ -25,7 +58,16 @@ const EmailEtMdp = (props) => {
         id="pwd"
         onChange={(e) => handlePasswordChange(e)}
       ></input>
-      <button onClick={() => changePage(2)}>étape suivante</button>
+
+      {isValue && (
+        <button
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          étape suivante
+        </button>
+      )}
     </section>
   );
 };

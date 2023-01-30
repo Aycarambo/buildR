@@ -25,6 +25,10 @@ const Inscription = () => {
     setCurrentRegistrationStep(page);
   };
 
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   const handleRegister = async () => {
     // eslint-disable-next-line
     const user = await directus.users.createOne({
