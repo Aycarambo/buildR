@@ -1,0 +1,212 @@
+.card{
+    box-shadow: 1px 1px 10px var(--clr-grey);
+    margin: 1.6rem;
+    border-radius: 16px;
+
+    &__legende{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 2.4rem;
+        gap: 1.6rem;
+        border-radius: 0 0 16px 16px;
+
+        &--overlay{
+            padding: 0;
+            background: none;
+        }
+    }
+
+
+
+    &__etoiles{
+        display: flex;
+        gap: 0.2rem;
+
+        &:after{
+            content: "";
+            width: 0.1rem;
+            height: auto;
+            background-color: var(--clr-body);
+            margin: 0rem 1rem;
+        }
+    }
+
+    &__prix{
+        span{
+            font-size: 1.6rem;
+            color: #FCD65C;
+            line-height: 1;
+        }
+    }
+
+    &__profil{
+        display: grid;
+        align-items: center;
+        gap: 3.2rem 0;
+    }
+
+    &__profilPic{
+        border-radius: 100%;
+        width: 75px;
+        height: 75px;
+        justify-self: self-end;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        grid-column: 1;
+        
+        &>span{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__description{
+        grid-column: 1/3;
+        grid-row: 2;
+        font-size: 1.4rem;
+        font-weight: 300;
+        
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 1.8rem;
+    }
+
+    &__ville{
+        font-weight: 300;
+        color: var(--clr-body);
+        opacity: .5;
+        font-size: 1.4rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    &__slider{
+        height: 220px;
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px 16px 0 0;
+        }
+    }
+
+    &__iconeI{
+        border: 1.5px solid var(--clr-body);
+        border-radius: 100%;
+        width: 40px;
+        color: var(--clr-body);
+        aspect-ratio: 1;
+        font-size: 2rem;
+        justify-self: self-end;
+        font-weight: 600;
+    }
+
+
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        z-index: 10;
+        padding-bottom: 5rem;
+        display: none;
+    }
+
+    &__closeOverlay{
+        align-self: flex-end;
+        padding: 3rem 0 1rem 0;
+    }
+
+    &__tarifsItem{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        padding-bottom: 0.8rem;
+
+        p{ 
+            font-weight: 300;
+        }   
+    }
+
+    &__metiers{
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+
+            p{  
+                display: flex;
+                align-items: center;
+                font-size: 1.4rem;
+                font-weight: 300;
+                color: var(--clr-body);
+
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    width: 1px;
+                    height: 100%;
+                    background: var(--clr-body);
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    &__contact{
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+
+            p{
+                font-size: 1.4rem;
+                font-weight: 300;
+
+                img{
+                    margin-right: 0.8rem;
+                }
+            }
+        }
+        
+    }
+
+    &__section{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        &::before{
+            content: "";
+            width: 100px;
+            height: 1px;
+            display: block;
+            background-color: #FCD65C;
+            margin: auto;
+
+        }
+
+        h3{
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin: 3rem 0;
+        }
+    }
+
+}
+
