@@ -1,0 +1,48 @@
+.connexion{
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   padding: 150px 60px 24px 60px;
+   background-image: url(./../../images/builder_on_beams.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   > div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .connexion__logo{
+      max-width: 260px;
+   }
+
+   .connexion__choises{
+      margin-bottom: 32px;
+   }
+
+   .connexion__with{
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+
+      button{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 32px;
+         height: 32px;
+         border-radius: 27px;
+         border: solid 1px #000;
+      }
+   }
+
+   .connexion__version{
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+      color: #18242f80;
+   }
+}
