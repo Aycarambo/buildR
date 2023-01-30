@@ -1,28 +1,21 @@
-.connexion__choises .btn{
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem 6.4rem;
+  border-radius: 42rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  max-width: 32rem;
+  width: 100%;
 
-   &.btn--yellow button{
-      background: linear-gradient(90deg, #FCD65C -0.08%, #EDB341 100.08%);
-      margin-bottom: 16px;
-   }
+  &--yellow {
+    background: linear-gradient(90deg, #fcd65c -0.08%, #edb341 100.08%);
+  }
 
-   &.btn--border button{
-      background: transparent;
-      border: solid 1px #000;
-   }
-
-   button{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px 64px;
-      border-radius: 420px;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 24px;
-      text-transform: uppercase;
-      max-width: 230px;
-   }
+  &--border {
+    outline: solid 1px #000;
+  }
 }
-
-
-

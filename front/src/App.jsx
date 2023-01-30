@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Likes from "./pages/Likes";
 import Messages from "./pages/Messages";
 import Account from "./pages/Account";
+import Prix from "./pages/inscription/Prix";
 import Layout from "./pages/Layout";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
       </Routes>
       <Routes>
         <Route path="/connexion" element={<ConnexionInscription />} />
+        <Route path="/prix" element={<Prix />} />
       </Routes>
     </BrowserRouter>
   );
