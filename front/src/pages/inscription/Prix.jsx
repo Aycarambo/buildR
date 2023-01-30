@@ -8,7 +8,9 @@ const Prix = () => {
           <button className="btn btn--border">500€ en -</button>
         </li>
         <li className="budget__item">
-          <button className="btn btn--border">Entre 500€ et 1000€</button>
+          <button className="btn btn--border" data-toggle="true">
+            Entre 500€ et 1000€
+          </button>
         </li>
         <li className="budget__item">
           <button className="btn btn--border">Entre 1000€ et 2000€</button>
