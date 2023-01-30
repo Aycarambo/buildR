@@ -8,6 +8,9 @@
 /front/dist/
 /back/
 
+/history/
+/history/front/
+
 # testing
 /coverage
 
