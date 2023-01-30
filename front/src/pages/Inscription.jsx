@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
 import { DirectusContext } from "../App";
+import Jobs from "./EtapesInscription/Jobs";
+import Budget from "./EtapesInscription/Budget";
 
 const Inscription = () => {
   const directus = useContext(DirectusContext);
@@ -16,6 +18,10 @@ const Inscription = () => {
     setState({ ...state, ...obj });
   };
 
+  const changePage = (page) => {
+    setCurrentRegistrationStep(page);
+  };
+
   const handleRegister = async () => {
     // eslint-disable-next-line
     const user = await directus.users.createOne({
@@ -27,9 +33,15 @@ const Inscription = () => {
   return (
     <main>
       {currentRegistrationStep === 1 && (
-        <EmailEtMdp appendToState={appendToState} />
+        <EmailEtMdp changePage={changePage} appendToState={appendToState} />
       )}
-      <button onClick={handleRegister}>S'enregistrer</button>
+      {currentRegistrationStep === 2 && (
+        <Jobs changePage={changePage} appendToState={appendToState} />
+      )}
+      {currentRegistrationStep === 3 && (
+        <Budget changePage={changePage} appendToState={appendToState} />
+      )}
+      {/* <button onClick={handleRegister}>S'enregistrer</button> */}
     </main>
   );
 };

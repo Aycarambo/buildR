@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
+import { DirectusContext } from "../../App";
 
-const Jobs = () => {
-  const [jobs, getJobs] = useState(null);
+const Jobs = (props) => {
+  const { changePage } = props;
+
+  const [jobs, setJobs] = useState(null);
+  const directus = useContext(DirectusContext);
 
   useEffect(() => {
-    fetch("/items/jobs")
-      .then((res) => res.json())
-      .then((data) => {
-        getJobs(data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    async function fetchJobs() {
+      const res = await directus.items("jobs").readByQuery({ limit: -1 });
+      setJobs(res.data);
+    }
+    fetchJobs();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -31,7 +34,10 @@ const Jobs = () => {
               return (
                 <li key={idx} className="category">
                   <button>
-                    <img src="https://picsum.photos/200/300?random=2" alt="" />
+                    <img
+                      src="https://picsum.photos/200/300?random=2"
+                      alt={job.label}
+                    />
                     <p>{job.label}</p>
                   </button>
                 </li>
@@ -41,7 +47,12 @@ const Jobs = () => {
         ) : (
           <p>Pas de données</p>
         )}
-        <button className="btn choiceCategory__btn">Suite</button>
+        <button
+          onClick={() => changePage(3)}
+          className="btn choiceCategory__btn"
+        >
+          Suite
+        </button>
       </main>
     </>
   );
