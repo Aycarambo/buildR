@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import starFill from "../assets/images/star-fill.svg";
+import starStroke from "../assets/images/star-stroke.svg";
 import btnClose from "../assets/images/btn-close-overlay.svg";
 import localisation from "../assets/images/localisation.svg";
 import mail from "../assets/images/send-mail.svg";
+import image1 from "../assets/images/plombier-evier.jpg";
+import image2 from "../assets/images/remplacement-robinet-radiateur.jpg";
+import image3 from "../assets/images/reparation-debouchage-wc.jpg";
 import tel from "../assets/images/tel.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,8 +25,38 @@ const swiperParams = {
   },
 };
 
-const Card = () => {
+const getStars = (reviews) => {
+  let filledStars = 0;
+  let sum = 0;
+
+  reviews?.forEach((review) => {
+    sum += review.rating;
+  });
+
+  const avg = reviews.length > 0 ? sum / reviews.length : 1;
+
+  filledStars = Math.ceil(avg * 5);
+
+  let stars = [];
+  for (let i = 0; i < 5; ++i) {
+    let star = undefined;
+    if (filledStars > 0) {
+      star = 1;
+    } else {
+      star = 0;
+    }
+    stars.push(star);
+    filledStars--;
+  }
+  return stars;
+};
+
+const Card = (props) => {
+  const { data } = props;
   const [isOpen, setOpen] = useState(false);
+
+  const images = data?.images;
+  const stars = getStars(data?.reviews);
 
   const handleOnClick = () => {
     setOpen(!isOpen);
@@ -37,28 +71,41 @@ const Card = () => {
             modules={swiperModules}
             {...swiperParams}
           >
-            <SwiperSlide tag="li" className="card__item">
-              <img src="https://picsum.photos/400" alt="" />
-            </SwiperSlide>
-            <SwiperSlide tag="li" className="card__item">
-              <img src="https://picsum.photos/400" alt="" />
-            </SwiperSlide>{" "}
-            <SwiperSlide tag="li" className="card__item">
-              <img src="https://picsum.photos/400" alt="" />
-            </SwiperSlide>
+            {images &&
+              images.map((image, index) => {
+                return (
+                  <SwiperSlide key={index} tag="li" className="card__item">
+                    <img src={image} alt="" />
+                  </SwiperSlide>
+                );
+              })}
+            {!images && (
+              <>
+                <SwiperSlide tag="li" className="card__item">
+                  <img src={image1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide tag="li" className="card__item">
+                  <img src={image2} alt="" />
+                </SwiperSlide>
+                <SwiperSlide tag="li" className="card__item">
+                  <img src={image3} alt="" />
+                </SwiperSlide>
+              </>
+            )}
           </Swiper>
           <div id="swiper-pagination"></div>
         </div>
-
         <figcaption className="card__legende">
           <div className="card__info">
             <span>
               <div className="card__etoiles">
-                <img src={starFill} alt="" />
-                <img src={starFill} alt="" />
-                <img src={starFill} alt="" />
-                <img src={starFill} alt="" />
-                <img src={starFill} alt="" />
+                {stars.map((filledStar, index) => {
+                  return filledStar === 1 ? (
+                    <img src={starFill} alt="" key={index} />
+                  ) : (
+                    <img src={starStroke} alt="" key={index} />
+                  );
+                })}
               </div>
               <div className="card__prix">
                 <span>€</span>
@@ -66,7 +113,7 @@ const Card = () => {
                 <span>€</span>
               </div>
             </span>
-            <h2 className="card__title">ABC Paysagiste</h2>
+            <h2 className="card__title">{data?.name}</h2>
             <p className="card__ville">
               <img src={localisation} alt="" />
               Angers

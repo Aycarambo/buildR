@@ -5,6 +5,8 @@
   transition: 0.3s linear visibility,
     0.5s opacity cubic-bezier(0.075, 0.82, 0.165, 1),
     0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: white;
+  z-index: 1;
 
   &__legende {
     position: relative;

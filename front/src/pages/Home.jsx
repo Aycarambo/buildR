@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Card from "../components/Card";
@@ -11,6 +11,7 @@ const Home = () => {
   const directus = useContext(DirectusContext);
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
+  const [entreprises, setEntreprises] = useState([]);
 
   const directusEntreprises = directus.items("craftsmen");
 
@@ -24,7 +25,8 @@ const Home = () => {
           },
         },
       });
-      console.log(entreprises);
+      const limiteEntreprises = entreprises.data.splice(0, 10);
+      setEntreprises(limiteEntreprises);
     }
     fetchData();
   }, [user.searching_for_jobs, directusEntreprises]);
@@ -33,13 +35,9 @@ const Home = () => {
     <>
       <main className="home">
         <div className="home__cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {entreprises?.map((entreprise, index) => {
+            return <Card data={entreprise} />;
+          })}
         </div>
 
         <div className="home__containerBtn">
