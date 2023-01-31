@@ -21,10 +21,10 @@ const ConnexionInscription = () => {
 
         <div className="connexion__with">
           <button>
-            <img src={logoGoogle} alt="connexion avec Google" />
+            <img src={logoGoogleUrl} alt="connexion avec Google" />
           </button>
           <button>
-            <img src={logoApple} alt="connexion avec Apple" />
+            <img src={logoAppleUrl} alt="connexion avec Apple" />
           </button>
           <button>
               <img src={logoFacebook} alt="connexion avec Apple" />

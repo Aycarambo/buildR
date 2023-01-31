@@ -1,0 +1,57 @@
+.authentification{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0px 32px;
+
+   div{
+      position: relative;
+      width: 100%;
+
+      &::after{
+         content: "Email";
+         position: absolute;
+         height: 20px;
+         width: 40px;
+         background-color: red;
+         font-size: 1.4rem;
+         left: 24px;
+         top: 50%;
+         transform: translateY(-50%);
+         line-height: 1.4rem;
+      }
+   }
+
+   input{
+      width: 100%;
+      border: 1px solid #18242F;
+      border-radius: 420px;
+      padding: 12px 24px;
+      outline: none;
+
+      position: relative;
+
+
+
+      &:focus-within{
+         border: 1px solid #FCD65C;
+      }
+
+      &::placeholder{
+         color: #18242F;
+         font-size: 1.4rem;
+         line-height: 1.4rem;
+         transform: translateY(-10px);
+      }
+   }
+
+   &__email{
+      margin-bottom: 8px;
+   }
+
+   &__password{
+      margin-bottom: 8px;
+   }
+}
+
