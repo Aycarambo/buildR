@@ -3,6 +3,7 @@ import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
 import { DirectusContext } from "../App";
 import Jobs from "./EtapesInscription/Jobs";
 import Budget from "./EtapesInscription/Budget";
+import Recapitulatif from "./EtapesInscription/Recapitulatif";
 
 const Inscription = () => {
   const directus = useContext(DirectusContext);
@@ -44,7 +45,13 @@ const Inscription = () => {
       {currentRegistrationStep === 3 && (
         <Budget changePage={changePage} appendToState={appendToState} />
       )}
-      {/* <button onClick={handleRegister}>S'enregistrer</button> */}
+      {currentRegistrationStep === 4 && (
+        <Recapitulatif
+          changePage={changePage}
+          appendToState={appendToState}
+          inscriptionState={state}
+        />
+      )}
     </main>
   );
 };

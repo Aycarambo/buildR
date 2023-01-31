@@ -6,8 +6,6 @@ import Likes from "./pages/Likes";
 import Messages from "./pages/Messages";
 import Account from "./pages/Account";
 import Inscription from "./pages/Inscription";
-import Budget from "./pages/EtapesInscription/Budget";
-import Jobs from "./pages/EtapesInscription/Jobs";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
 
