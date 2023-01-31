@@ -12,22 +12,22 @@ const Navbar = () => {
       <ul className="navbar__pages">
         <li className="navbar__item">
           <Link to="/">
-            <img src={swipeUrl} alt="" />
+            <span className="icon-swipe"></span>
           </Link>
         </li>
         <li className="navbar__item">
           <Link to="/likes">
-            <img src={heartUrl} alt="" />
+            <span className="icon-heart"></span>
           </Link>
         </li>
         <li className="navbar__item">
           <Link to="/messages">
-            <img src={mailUrl} alt="" />
+            <span className="icon-messages"></span>
           </Link>
         </li>
         <li className="navbar__item">
           <Link to="/account">
-            <img src={accountUrl} alt="" />
+            <span className="icon-people"></span>
           </Link>
         </li>
       </ul>

@@ -20,10 +20,13 @@
     height: 7rem;
     width: 100%;
 
-    img {
-      display: block;
-      height: 3.2rem;
-      width: auto;
+    span {
+      font-size: 3.2rem;
+      color: var(--clr-body);
+
+      &.icon-swipe {
+        font-size: 2.5rem;
+      }
     }
   }
 }
