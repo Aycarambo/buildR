@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ConnexionInscription from "./pages/ConnexionInscription";
 import Home from "./pages/Home";
@@ -11,15 +11,16 @@ import LayoutFull from "./pages/LayoutFull";
 import LayoutHeader from "./pages/LayoutHeader";
 import { Directus } from "@directus/sdk";
 import Conversation from "./pages/Conversation";
-import { useState } from "react";
 
 export const DirectusContext = createContext();
 const directus = new Directus();
 
 export const UserContext = createContext();
 
+
 const App = () => {
   const [user, setUser] = useState(false);
+  
 
   return (
     <BrowserRouter>
@@ -29,21 +30,23 @@ const App = () => {
             <Route element={<LayoutFull />}>
               <Route path="/likes" element={<Likes />} />
               <Route path="/messages" element={<Messages />} />
+              <Route path="/conv" element={<Conversation />} />
               <Route path="/account" element={<Account />} />
               <Route index element={<Home />} />
             </Route>
           </Routes>
           <Routes>
           <Route element={<LayoutHeader />}>
-          <Route path="/connexioninscription" element={<ConnexionInscription />}/>
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/inscription" element={<Inscription />} />
           </Route>
+          <Route path="/connexioninscription" element={<ConnexionInscription />}/>
           </Routes>
         </UserContext.Provider>
       </DirectusContext.Provider>
     </BrowserRouter>
   );
 };
+
 
 export default App;

@@ -8,21 +8,21 @@ import logoFacebook from "../assets/images/facebook.svg";
 const ConnexionInscription = () => {
   return (
     <main className="connexionInscription">
-      <img src={logoUrl} alt="Logo Buildr" className="connexion__logo" />
+      <img src={logoUrl} alt="Logo Buildr" className="connexionInscription__logo" />
 
       <div>
-        <ul className="connexion__choises">
-          <li className="connexion__btn">
+        <ul className="connexionInscription__choises">
+          <li className="connexionInscription__btn">
             <button className="btn btn--yellow">Connexion</button>
           </li>
-          <li className="connexion__btn">
+          <li className="connexionInscription__btn">
             <Link to="/inscription">
               <button className="btn btn--border">Inscription</button>
             </Link>
           </li>
         </ul>
 
-        <aside className="connexion__with">
+        <aside className="connexionInscription__with">
           <nav>
             <ul>
               <li>
@@ -44,7 +44,7 @@ const ConnexionInscription = () => {
           </nav>
         </aside>
 
-        <p className="connexion__version">Version 1.0</p>
+        <p className="connexionInscription__version">Version 1.0</p>
       </div>
     </main>
   );

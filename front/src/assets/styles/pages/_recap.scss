@@ -2,19 +2,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 16px;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+  margin-top: 1.6rem;
 
   .head__title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: var(--fw-body-m);
+    font-size: 2rem;
+    line-height: 2.4rem;
   }
   .head__link {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+    font-weight: var(--fw-body);
+    font-size: var(--fs-body-xs);
+    line-height: 1.6rem;
     text-decoration-line: underline;
     color: var(--clr-grey-4);
   }
@@ -24,19 +24,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 32px;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+  margin-top: 3.2rem;
 
   .head__title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: var(--fw-body-m);
+    font-size: 2rem;
+    line-height: 2.4rem;
   }
   .head__link {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+    font-weight: var(--fw-body);
+    font-size: var(--fs-body-xs);
+    line-height: 1.6rem;
     text-decoration-line: underline;
     color: var(--clr-grey-4);
   }
@@ -46,19 +46,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 16px;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+  margin-top: 1.6rem;
 
   .head__title {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: var(--fw-body-m);
+    font-size: 2rem;
+    line-height: 2.4rem;
   }
   .head__link {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+    font-weight: var(--fw-body);
+    font-size: var(--fs-body-xs);
+    line-height: 1.6rem;
     text-decoration-line: underline;
     color: var(--clr-grey-4);
   }
@@ -66,25 +66,25 @@
 .categories__container {
   display: flex;
   flex-direction: row;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 16px;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+  margin-top: 1.6rem;
 
   .container__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 8px;
+    padding: 0 0.8rem;
 
     .card__image {
-      width: 43px;
-      height: 43px;
-      border-radius: 50px;
+      width: 4.3rem;
+      height: 4.3rem;
+      border-radius: 5rem;
     }
     .card__text {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16px;
+      font-weight: var(--fw-body);
+      font-size: var(--fs-body-xs);
+      line-height: 1.6rem;
     }
   }
 }
@@ -95,15 +95,15 @@
   justify-content: center;
   padding-top: 14px;
   padding-bottom: 14px;
-  border: solid 1px #e7e7e7;
+  border: solid 0.1rem var(--clr-grey);
   border-radius: 50px;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 16px;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
+  margin-top: 1.6rem;
 
   .selection__prix {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: var(--fw-body-m);
+    font-size: var(--fs-body);
     line-height: 24px;
   }
 }
@@ -122,21 +122,21 @@
 .description__container {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-top: 1.6rem;
+  margin-left: 3.2rem;
+  margin-right: 3.2rem;
 
   .description__textarea {
     resize: none;
     width: 100%;
     height: 20vh;
     border-radius: 25px;
-    border: solid 1px #e7e7e7;
+    border: solid 0.1rem var(--clr-grey);
     padding-top: 12px;
     padding-left: 24px;
     padding-right: 24px;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: var(--fw-body);
+    font-size: 1.6rem;
     line-height: 20px;
     font-family: "MadeTommy";
   }
