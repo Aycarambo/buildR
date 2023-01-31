@@ -44,8 +44,8 @@ const Inscription = () => {
     <>
     <header className="inscription__header">
       <button className="header__back"></button>
-      <h1 className="header__title">Inscription</h1>
-      <h2 className="header__subtitle">Rencontre l’artisan qu’il te faut eheh</h2>
+      <h1 className="header__title">Connexion</h1>
+      <h2 className="header__subtitle">Tu nous as manqué !</h2>
     </header>
     <main>
       {currentRegistrationStep === 1 && (

@@ -3,9 +3,6 @@ import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
 import { DirectusContext } from "../App";
 import Jobs from "./EtapesInscription/Jobs";
 import Budget from "./EtapesInscription/Budget";
-import logoApple from "../assets/images/apple.svg";
-import logoGoogle from "../assets/images/google.svg";
-import logoFacebook from "../assets/images/facebook.svg";
 
 const Inscription = () => {
   const directus = useContext(DirectusContext);
@@ -44,8 +41,8 @@ const Inscription = () => {
     <>
     <header className="inscription__header">
       <button className="header__back"></button>
-      <h1 className="header__title">Inscription</h1>
-      <h2 className="header__subtitle">Rencontre l’artisan qu’il te faut eheh</h2>
+      <h1 className="header__title">Connexion</h1>
+      <h2 className="header__subtitle">Tu nous as manqué !</h2>
     </header>
     <main>
       {currentRegistrationStep === 1 && (
