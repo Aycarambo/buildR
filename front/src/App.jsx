@@ -7,8 +7,6 @@ import Messages from "./pages/Messages";
 import Account from "./pages/Account";
 import Connexion from "./pages/Connexion";
 import Inscription from "./pages/Inscription";
-import Budget from "./pages/EtapesInscription/Budget";
-import Jobs from "./pages/EtapesInscription/Jobs";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
 
