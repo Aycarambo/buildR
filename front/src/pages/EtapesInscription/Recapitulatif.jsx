@@ -21,11 +21,11 @@ const Recapitulatif = (props) => {
             return (
               <div className="container__card">
                 <img
-                  src={imagecouvreur}
-                  alt={category}
+                  src={"/assets/" + category.imageId + "?download"}
+                  alt={category.label}
                   className="card__image"
                 />
-                <p className="card__text">{category}</p>
+                <p className="card__text">{category.label}</p>
               </div>
             );
           })}
