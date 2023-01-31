@@ -5,11 +5,11 @@ import Home from "./pages/Home";
 import Likes from "./pages/Likes";
 import Messages from "./pages/Messages";
 import Account from "./pages/Account";
+import Connexion from "./pages/Connexion";
 import Inscription from "./pages/Inscription";
-import Budget from "./pages/EtapesInscription/Budget";
-import Jobs from "./pages/EtapesInscription/Jobs";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
+import Conversation from "./pages/Conversation";
 
 export const DirectusContext = createContext();
 const directus = new Directus();
@@ -27,7 +27,8 @@ const App = () => {
           </Route>
         </Routes>
         <Routes>
-          <Route path="/connexion" element={<ConnexionInscription />} />
+          <Route path="/connexioninscription" element={<ConnexionInscription />} />
+          <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
         </Routes>
       </DirectusContext.Provider>

@@ -1,11 +1,12 @@
 import React from "react";
 import logoUrl from "../assets/images/logo.svg";
-import logoAppleUrl from "../assets/images/logoApple.png";
-import logoGoogleUrl from "../assets/images/logoGoogle.png";
+import logoApple from "../assets/images/apple.svg";
+import logoGoogle from "../assets/images/google.svg";
+import logoFacebook from "../assets/images/facebook.svg";
 
 const ConnexionInscription = () => {
   return (
-    <main className="connexion">
+    <main className="connexionInscription">
       <img src={logoUrl} alt="Logo Buildr" className="connexion__logo" />
 
       <div>
@@ -20,10 +21,13 @@ const ConnexionInscription = () => {
 
         <div className="connexion__with">
           <button>
-            <img src={logoGoogleUrl} alt="connexion avec Google" />
+            <img src={logoGoogle} alt="connexion avec Google" />
           </button>
           <button>
-            <img src={logoAppleUrl} alt="connexion avec Apple" />
+            <img src={logoApple} alt="connexion avec Apple" />
+          </button>
+          <button>
+              <img src={logoFacebook} alt="connexion avec Apple" />
           </button>
         </div>
 

@@ -3,6 +3,7 @@ import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
 import { DirectusContext } from "../App";
 import Jobs from "./EtapesInscription/Jobs";
 import Budget from "./EtapesInscription/Budget";
+import Recapitulatif from "./EtapesInscription/Recapitulatif";
 
 const Inscription = () => {
   const directus = useContext(DirectusContext);
@@ -25,27 +26,41 @@ const Inscription = () => {
     setCurrentRegistrationStep(page);
   };
 
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   const handleRegister = async () => {
+    console.log(state);
     // eslint-disable-next-line
-    const user = await directus.users.createOne({
-      email: state.email,
-      password: state.pwd,
-    });
+    // const user = await directus.users.createOne({
+    //   email: state.email,
+    //   password: state.pwd,
+    // });
   };
 
   return (
-    <main>
-      {currentRegistrationStep === 1 && (
-        <EmailEtMdp changePage={changePage} appendToState={appendToState} />
-      )}
-      {currentRegistrationStep === 2 && (
-        <Jobs changePage={changePage} appendToState={appendToState} />
-      )}
-      {currentRegistrationStep === 3 && (
-        <Budget changePage={changePage} appendToState={appendToState} />
-      )}
-      {/* <button onClick={handleRegister}>S'enregistrer</button> */}
-    </main>
+    <>
+      <main>
+        {currentRegistrationStep === 1 && (
+          <EmailEtMdp changePage={changePage} appendToState={appendToState} />
+        )}
+        {currentRegistrationStep === 2 && (
+          <Jobs changePage={changePage} appendToState={appendToState} />
+        )}
+        {currentRegistrationStep === 3 && (
+          <Budget changePage={changePage} appendToState={appendToState} />
+        )}
+        {currentRegistrationStep === 4 && (
+          <Recapitulatif
+            changePage={changePage}
+            appendToState={appendToState}
+            inscriptionState={state}
+            handleRegister={handleRegister}
+          />
+        )}
+      </main>
+    </>
   );
 };
 

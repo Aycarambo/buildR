@@ -1,0 +1,12 @@
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__containerBtn {
+    display: flex;
+    justify-content: center;
+    gap: 5.6rem;
+  }
+}

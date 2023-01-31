@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const budgets = [
   { min: null, max: 500 },
@@ -16,7 +16,7 @@ const Budget = (props) => {
   };
 
   const handleSubmit = () => {
-    appendToState(budget);
+    appendToState({ budget: budget });
     changePage(4);
   };
 
