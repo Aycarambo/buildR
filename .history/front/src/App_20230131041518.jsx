@@ -34,11 +34,12 @@ const App = () => {
             </Route>
           </Routes>
           <Routes>
-          <Route element={<LayoutHeader />}>
-          <Route path="/connexioninscription" element={<ConnexionInscription />}/>
+            <Route
+              path="/connexioninscription"
+              element={<ConnexionInscription />}
+            />
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/inscription" element={<Inscription />} />
-          </Route>
           </Routes>
         </UserContext.Provider>
       </DirectusContext.Provider>

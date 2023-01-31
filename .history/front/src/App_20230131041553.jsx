@@ -34,7 +34,7 @@ const App = () => {
             </Route>
           </Routes>
           <Routes>
-          <Route element={<LayoutHeader />}>
+          <Route element={<LayoutFull />}>
           <Route path="/connexioninscription" element={<ConnexionInscription />}/>
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/inscription" element={<Inscription />} />

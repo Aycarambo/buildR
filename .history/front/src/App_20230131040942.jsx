@@ -7,8 +7,7 @@ import Messages from "./pages/Messages";
 import Account from "./pages/Account";
 import Connexion from "./pages/Connexion";
 import Inscription from "./pages/Inscription";
-import LayoutFull from "./pages/LayoutFull";
-import LayoutHeader from "./pages/LayoutHeader";
+import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
 import Conversation from "./pages/Conversation";
 import { useState } from "react";
@@ -26,19 +25,21 @@ const App = () => {
       <DirectusContext.Provider value={directus}>
         <UserContext.Provider value={{ user, actions: { setUser } }}>
           <Routes>
-            <Route element={<LayoutFull />}>
+            <Route element={<Layout />}>
               <Route path="/likes" element={<Likes />} />
               <Route path="/messages" element={<Messages />} />
               <Route path="/account" element={<Account />} />
               <Route index element={<Home />} />
+              <Route
+              path="/connexioninscription"
+              element={<ConnexionInscription />}
+            />
+            <Route path="/connexion" element={<Connexion />} />
+            <Route path="/inscription" element={<Inscription />} />
             </Route>
           </Routes>
           <Routes>
-          <Route element={<LayoutHeader />}>
-          <Route path="/connexioninscription" element={<ConnexionInscription />}/>
-            <Route path="/connexion" element={<Connexion />} />
-            <Route path="/inscription" element={<Inscription />} />
-          </Route>
+
           </Routes>
         </UserContext.Provider>
       </DirectusContext.Provider>
