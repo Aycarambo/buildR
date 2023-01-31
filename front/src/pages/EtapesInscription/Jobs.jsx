@@ -8,8 +8,9 @@ const Jobs = (props) => {
   let selectedJobs = [];
   if (jobs) {
     jobs?.forEach((job) => {
+      console.log("job : ", job);
       if (job.selected) {
-        selectedJobs.push(job.label);
+        selectedJobs.push({ label: job.label, imageId: job.imageId });
       }
     });
   }
@@ -19,9 +20,15 @@ const Jobs = (props) => {
   useEffect(() => {
     async function fetchJobs() {
       const res = await directus.items("jobs").readByQuery({ limit: -1 });
+      console.log(res.data);
       let tempJobs = [];
       res.data.map((job, index) => {
-        tempJobs[index] = { index: index, label: job.label, selected: false };
+        tempJobs[index] = {
+          index: index,
+          label: job.label,
+          imageId: job.image,
+          selected: false,
+        };
       });
       setJobs(tempJobs);
     }
@@ -62,7 +69,7 @@ const Jobs = (props) => {
                       "button" + (job.selected ? " button--active" : "")
                     }
                   >
-                    <img src="https://picsum.photos/200/300?random=2" alt="" />
+                    <img src={"/assets/" + job.imageId + "?download"} alt="" />
                     <p>{job.label}</p>
                   </button>
                 </li>
