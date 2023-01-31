@@ -9,6 +9,7 @@ import Connexion from "./pages/Connexion";
 import Inscription from "./pages/Inscription";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
+import Conversation from "./pages/Conversation";
 
 export const DirectusContext = createContext();
 const directus = new Directus();
