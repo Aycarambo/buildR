@@ -9,4 +9,12 @@
     justify-content: center;
     gap: 5.6rem;
   }
+
+  &__cards {
+    display: block;
+    width: 50rem;
+    height: 47.7rem;
+    margin: 0 auto;
+    position: relative;
+  }
 }
