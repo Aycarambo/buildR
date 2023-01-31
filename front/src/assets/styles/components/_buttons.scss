@@ -4,19 +4,19 @@
   align-items: center;
   padding: 1.4rem;
   border-radius: 42rem;
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: var(--fw-body-m);
+  font-size: var(--fs-body);
   line-height: 2.4rem;
   text-transform: uppercase;
   max-width: 32rem;
   width: 100%;
 
   &--yellow {
-    background: linear-gradient(90deg, #fcd65c -0.08%, #edb341 100.08%);
+    background: linear-gradient(90deg, var(--clr-yellow) -0.08%, #edb341 100.08%);
   }
 
   &--border {
-    outline: solid 1px var(--clr-body);
+    outline: solid 0.1rem var(--clr-body);
 
     &[data-toggle="true"] {
       outline-color: var(--clr-yellow);
@@ -31,8 +31,10 @@
   }
 }
 
-.btnSwipe {
-  border: 2px solid;
+
+.btnSwipe{
+
+  border: 0.2rem solid;
   border-radius: 100%;
   aspect-ratio: 1;
   width: 7rem;
