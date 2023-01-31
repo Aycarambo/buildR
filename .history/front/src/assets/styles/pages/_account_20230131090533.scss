@@ -19,8 +19,6 @@
 
 .user__project{
    padding-top: 50px;
-   display: flex;
-   flex-direction: column;
 
    .project__categories{
       margin-bottom: 30px;
@@ -100,7 +98,5 @@
       font-size: 1.1rem;
       background-color: var(--clr-yellow);
       color: white;
-      align-self: center;
-      margin-top: 40px;
    }
 }
