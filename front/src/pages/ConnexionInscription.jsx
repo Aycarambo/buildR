@@ -8,12 +8,18 @@ import logoFacebook from "../assets/images/facebook.svg";
 const ConnexionInscription = () => {
   return (
     <main className="connexionInscription">
-      <img src={logoUrl} alt="Logo Buildr" className="connexionInscription__logo" />
+      <img
+        src={logoUrl}
+        alt="Logo Buildr"
+        className="connexionInscription__logo"
+      />
 
       <div>
         <ul className="connexionInscription__choises">
           <li className="connexionInscription__btn">
-            <button className="btn btn--yellow">Connexion</button>
+            <Link to="/connexion">
+              <button className="btn btn--yellow">Connexion</button>
+            </Link>
           </li>
           <li className="connexionInscription__btn">
             <Link to="/inscription">
