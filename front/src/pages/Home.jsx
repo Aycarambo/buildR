@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import Card from "../components/Card";
 import yellowHeart from "../assets/images/yellow-heart.svg";
@@ -11,14 +11,22 @@ const Home = () => {
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
 
-  // const entreprises = directus.items("craftsmen");
-  // entreprises.readByQuery({
-  //   jobs: {
-  //     id: {
-  //       _in: [],
-  //     },
-  //   },
-  // });
+  const directusEntreprises = directus.items("craftsmen");
+
+  useEffect(() => {
+    async function fetchData() {
+      const entreprises = await directusEntreprises.readByQuery({
+        fields: ["*.*.*"],
+        jobs: {
+          id: {
+            _in: [...user.searching_for_jobs],
+          },
+        },
+      });
+      console.log(entreprises);
+    }
+    fetchData();
+  }, [user.searching_for_jobs, directusEntreprises]);
 
   return (
     <>

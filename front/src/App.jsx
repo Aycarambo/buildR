@@ -10,7 +10,6 @@ import Inscription from "./pages/Inscription";
 import LayoutFull from "./pages/LayoutFull";
 import LayoutHeader from "./pages/LayoutHeader";
 import { Directus } from "@directus/sdk";
-import { useState } from "react";
 import Conversation from "./pages/Conversation";
 
 export const DirectusContext = createContext();

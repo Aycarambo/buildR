@@ -7,8 +7,7 @@
 /front/node_modules/
 /front/dist/
 
-/history/
-/history/front/
+/.history/
 
 /directus_database/
 /directus_uploads/
