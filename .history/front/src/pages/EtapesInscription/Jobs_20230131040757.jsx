@@ -53,7 +53,7 @@ const Jobs = (props) => {
     <>
       <header className="inscription__header">
         <Link to="/connexioninscription">
-        <button className="header__back"><svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 1.85718L1.5 7.00004M1.5 7.00004L6.5 12.1429M1.5 7.00004H17.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button className="header__back"></button>
         </Link>
         <h1 className="header__title">Choisir vos catégories</h1>
         <h2 className="header__subtitle">
