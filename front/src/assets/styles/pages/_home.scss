@@ -11,10 +11,12 @@
   }
 
   &__cards {
-    display: block;
-    width: 50rem;
-    height: 47.7rem;
+    display: grid;
+    place-items: center;
     margin: 0 auto;
     position: relative;
+    min-height: 55rem;
+    max-width: 50rem;
+    width: 100%;
   }
 }

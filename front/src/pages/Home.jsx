@@ -12,41 +12,35 @@ const Home = () => {
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
 
-  const directusEntreprises = directus.items("craftsmen");
+  const [list, setList] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const entreprises = await directusEntreprises.readByQuery({
-        fields: ["*.*.*"],
-        jobs: {
-          id: {
-            _in: [...user.searching_for_jobs],
-          },
-        },
-      });
-      console.log(entreprises);
-    }
-    fetchData();
-  }, [user.searching_for_jobs, directusEntreprises]);
+  const handleClick = (direction) => {
+    const topElement = list.find((item) => !item.direction);
+    setList(
+      list.map((item) => (item === topElement ? { ...item, direction } : item))
+    );
+  };
 
   return (
     <>
       <main className="home">
         <div className="home__cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {list.map((item) => (
+            <Card data={item} />
+          ))}
         </div>
 
         <div className="home__containerBtn">
-          <button className="btnSwipe btnSwipe--declined">
+          <button
+            className="btnSwipe btnSwipe--declined"
+            onClick={() => handleClick("left")}
+          >
             <img src={btnClose} alt="" />
           </button>
-          <button className="btnSwipe btnSwipe--accept">
+          <button
+            className="btnSwipe btnSwipe--accept"
+            onClick={() => handleClick("right")}
+          >
             <img src={yellowHeart} alt="" />
           </button>
         </div>

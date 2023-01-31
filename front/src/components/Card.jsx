@@ -21,7 +21,8 @@ const swiperParams = {
   },
 };
 
-const Card = () => {
+const Card = (props) => {
+  const { data } = props;
   const [isOpen, setOpen] = useState(false);
 
   const handleOnClick = () => {
@@ -29,7 +30,9 @@ const Card = () => {
   };
 
   return (
-    <article className="card">
+    <article
+      className={"card " + data.direction ? "card--" + data.direction : ""}
+    >
       <figure className="card__content">
         <div className="card__bg">
           <Swiper
