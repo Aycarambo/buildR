@@ -42,26 +42,33 @@ const EmailEtMdp = (props) => {
   };
 
   return (
-          <>
-            <main className="authentification">
-              <div className="authentification__email authentification__input">
-                <input type="email" name="email" id="email" placeholder="Email" value={dataConnexion.email} onChange={(e) => handleEmailChange(e)}/>
-              </div>
-              <div className="authentification__password authentification__input">
-                <input type="password" name="password" id="password" placeholder="Mot de passe" onChange={(e) => handlePasswordChange(e)}/>
-              </div>
+    <section>
+      <label htmlFor="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        value={dataConnexion.email}
+        onChange={(e) => handleEmailChange(e)}
+      ></input>
+      <label htmlFor="pwd">Mot de passe</label>
+      <input
+        type="password"
+        name="pwd"
+        id="pwd"
+        onChange={(e) => handlePasswordChange(e)}
+      ></input>
 
-              {isValue && (
-                <button
-                  onClick={() => {
-                    handleClick();
-                  }}
-                >
-                  Étape suivante
-                </button>
-              )}
-            </main>
-          </>
+      {isValue && (
+        <button
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          étape suivante
+        </button>
+      )}
+    </section>
   );
 };
 
