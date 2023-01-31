@@ -23,7 +23,7 @@ const Budget = (props) => {
   return (
     <>
       <header className="inscription__header">
-        <button className="header__back"></button>
+        <button className="header__back" onClick={() => changePage(2)}></button>
         <h1 className="header__title">Budget</h1>
         <h2 className="header__subtitle">
           Sélectionnez le budget que vous souhaitez accorder à votre projet.{" "}

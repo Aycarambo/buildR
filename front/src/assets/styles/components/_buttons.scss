@@ -23,27 +23,30 @@
       color: var(--clr-yellow);
     }
   }
+
+  &--notallowed {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
-
-.btnSwipe{
-
+.btnSwipe {
   border: 2px solid;
   border-radius: 100%;
   aspect-ratio: 1;
   width: 7rem;
   height: auto;
 
-  &--declined{
+  &--declined {
     border-color: var(--clr-body);
-    img{
+    img {
       width: 2.8rem;
       height: auto;
     }
   }
 
-  &--accept{
+  &--accept {
     border-color: var(--clr-yellow);
   }
 }
-

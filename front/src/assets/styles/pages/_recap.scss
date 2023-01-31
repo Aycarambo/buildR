@@ -109,7 +109,9 @@
 }
 
 .connexion__choises {
-  margin-top: 88px;
+  position: sticky;
+  margin-top: 2rem;
+  bottom: 1rem;
   display: flex;
   justify-content: center;
 

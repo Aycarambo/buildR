@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoApple from "../../assets/images/apple.svg";
 import logoGoogle from "../../assets/images/google.svg";
 import logoFacebook from "../../assets/images/facebook.svg";
@@ -47,7 +48,9 @@ const EmailEtMdp = (props) => {
   return (
     <>
       <header className="inscription__header">
-        <button className="header__back"></button>
+        <Link to="/connexioninscription">
+          <button className="header__back"></button>
+        </Link>
         <h1 className="header__title">Inscription</h1>
         <h2 className="header__subtitle">
           Rencontre l'artisan qu'il te faut eheh
