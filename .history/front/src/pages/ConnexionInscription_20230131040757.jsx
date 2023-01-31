@@ -22,27 +22,17 @@ const ConnexionInscription = () => {
           </li>
         </ul>
 
-        <aside className="connexion__with">
-          <nav>
-            <ul>
-              <li>
-                <button>
-                  <img src={logoGoogle} alt="connexion avec Google" />
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img src={logoApple} alt="connexion avec Apple" />
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img src={logoFacebook} alt="connexion avec Apple" />
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+        <div className="connexion__with">
+          <button>
+            <img src={logoGoogle} alt="connexion avec Google" />
+          </button>
+          <button>
+            <img src={logoApple} alt="connexion avec Apple" />
+          </button>
+          <button>
+            <img src={logoFacebook} alt="connexion avec Apple" />
+          </button>
+        </div>
 
         <p className="connexion__version">Version 1.0</p>
       </div>
