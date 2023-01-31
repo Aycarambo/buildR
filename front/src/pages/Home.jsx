@@ -8,12 +8,12 @@ import btnClose from "../assets/images/btn-close-overlay.svg";
 import { DirectusContext, UserContext } from "../App";
 
 const Home = () => {
-  const directus = useContext(DirectusContext);
+  const directusEntreprises = useContext(DirectusContext);
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
   const [entreprises, setEntreprises] = useState([]);
 
-  const directusEntreprises = directus.items("craftsmen");
+  const [list, setList] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,20 +31,33 @@ const Home = () => {
     fetchData();
   }, [user.searching_for_jobs, directusEntreprises]);
 
+  const handleClick = (direction) => {
+    const topElement = list.find((item) => !item.direction);
+    setList(
+      list.map((item) => (item === topElement ? { ...item, direction } : item))
+    );
+  };
+
   return (
     <>
       <main className="home">
         <div className="home__cards">
-          {entreprises?.map((entreprise, index) => {
-            return <Card data={entreprise} />;
+          {entreprises.map((entreprise, index) => {
+            return <Card data={entreprise} key={index} />;
           })}
         </div>
 
         <div className="home__containerBtn">
-          <button className="btnSwipe btnSwipe--declined">
+          <button
+            className="btnSwipe btnSwipe--declined"
+            onClick={() => handleClick("left")}
+          >
             <img src={btnClose} alt="" />
           </button>
-          <button className="btnSwipe btnSwipe--accept">
+          <button
+            className="btnSwipe btnSwipe--accept"
+            onClick={() => handleClick("right")}
+          >
             <img src={yellowHeart} alt="" />
           </button>
         </div>
