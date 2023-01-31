@@ -8,12 +8,12 @@ import btnClose from "../assets/images/btn-close-overlay.svg";
 import { DirectusContext, UserContext } from "../App";
 
 const Home = () => {
-  const directusEntreprises = useContext(DirectusContext);
+  const directus = useContext(DirectusContext);
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
   const [entreprises, setEntreprises] = useState([]);
 
-  const [list, setList] = useState([]);
+  const directusEntreprises = directus.items("craftsmen");
 
   useEffect(() => {
     async function fetchData() {
@@ -26,15 +26,18 @@ const Home = () => {
         },
       });
       const limiteEntreprises = entreprises.data.splice(0, 10);
+      console.log(limiteEntreprises);
       setEntreprises(limiteEntreprises);
     }
     fetchData();
   }, [user.searching_for_jobs, directusEntreprises]);
 
   const handleClick = (direction) => {
-    const topElement = list.find((item) => !item.direction);
-    setList(
-      list.map((item) => (item === topElement ? { ...item, direction } : item))
+    const topElement = entreprises.findLast((item) => !item.direction);
+    setEntreprises(
+      entreprises.map((item) =>
+        item === topElement ? { ...item, direction } : item
+      )
     );
   };
 
@@ -43,7 +46,7 @@ const Home = () => {
       <main className="home">
         <div className="home__cards">
           {entreprises.map((entreprise, index) => {
-            return <Card data={entreprise} key={index} />;
+            return <Card data={entreprise} dikey={index} />;
           })}
         </div>
 
