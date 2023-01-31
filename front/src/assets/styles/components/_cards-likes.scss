@@ -37,6 +37,8 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
+
   }
 
   &__title {
@@ -47,14 +49,19 @@
   &__description {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
-    padding: 1.6rem 0;
+    padding: 0px;
+	  gap: 1rem;
+  }
+
+  &__tel{
+    font-size: 1.4rem;
   }
 
   &__link {
     position: relative;
     text-decoration: none;
     color: var(--clr-grey-4);
+    font-size: 1.4rem;
 
     &::after {
       content: "";
