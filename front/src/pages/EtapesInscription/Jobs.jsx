@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { DirectusContext } from "../../App";
 
@@ -51,7 +52,9 @@ const Jobs = (props) => {
   return (
     <>
       <header className="inscription__header">
-        <button className="header__back"></button>
+        <Link to="/connexioninscription">
+          <button className="header__back"></button>
+        </Link>
         <h1 className="header__title">Choisir vos catégories</h1>
         <h2 className="header__subtitle">
           Sélectionner les différents métiers

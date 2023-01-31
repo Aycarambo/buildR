@@ -1,7 +1,12 @@
-import React, { useState } from "react";
-import imagecouvreur from "../../assets/images/couvreur.jpg";
+import React, { useState, useContext } from "react";
+import { Navigate } from "react-router-dom";
+
+import { UserContext } from "../../App";
 
 const Recapitulatif = (props) => {
+  const { user, actions } = useContext(UserContext);
+  const { setUser } = actions;
+
   const { changePage, inscriptionState, appendToState, handleRegister } = props;
   inscriptionState.categories.map((category) => {
     console.log(category);
@@ -13,12 +18,13 @@ const Recapitulatif = (props) => {
     appendToState({ description: description });
     console.log(inscriptionState);
     handleRegister();
+    setUser(true);
   };
 
   return (
     <>
       <header className="inscription__header">
-        <button className="header__back"></button>
+        <button className="header__back" onClick={() => changePage(3)}></button>
         <h1 className="header__title">Récapitulatif</h1>
       </header>
       <main className="resume">
@@ -84,16 +90,22 @@ const Recapitulatif = (props) => {
             ></textarea>
           </div>
         </section>
-        {description && (
-          <ul className="connexion__choises">
-            <li className="btn btn--yellow">
-              <button onClick={() => handleSubmit()} className="btn__content">
-                Valider
-              </button>
-            </li>
-          </ul>
-        )}
+        <ul className="connexion__choises">
+          <li className="connexion__btn">
+            <button
+              onClick={() => handleSubmit()}
+              className={
+                description
+                  ? "btn btn--yellow"
+                  : "btn btn--yellow btn--notallowed"
+              }
+            >
+              Valider
+            </button>
+          </li>
+        </ul>
       </main>
+      {user && <Navigate to="/" replace />}
     </>
   );
 };

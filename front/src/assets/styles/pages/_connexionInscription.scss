@@ -33,6 +33,12 @@
     display: flex;
     justify-content: center;
     width: 100%;
+
+    & > a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   .connexion__with {
@@ -56,5 +62,17 @@
     font-size: 1.4rem;
     line-height: 1.6rem;
     color: var(--clr-body);
+  }
+}
+
+.connexion__btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  & > a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
