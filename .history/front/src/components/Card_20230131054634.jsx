@@ -5,6 +5,23 @@ import localisation from "../assets/images/localisation.svg";
 import mail from "../assets/images/send-mail.svg";
 import tel from "../assets/images/tel.svg";
 
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+
+const swiperModules = [Pagination];
+const swiperParams = {
+  tag: "div",
+  wrapperTag: "ul",
+  slidesPerView: 1,
+
+  pagination: {
+    el: "#swiper-pagination",
+    clickable: true,
+  },
+};
+
 const Card = () => {
   const [isOpen, setOpen] = useState(false);
 
@@ -15,9 +32,25 @@ const Card = () => {
   return (
     <article className="card">
       <figure className="card__content">
-        <div className="card__slider">
-          <img src="https://picsum.photos/400" alt="" />
+        <div>
+          <Swiper
+            className="card__slider"
+            modules={swiperModules}
+            {...swiperParams}
+          >
+            <SwiperSlide tag="li" className="card__item">
+              <img src="https://picsum.photos/400" alt="" />
+            </SwiperSlide>
+            <SwiperSlide tag="li" className="card__item">
+              <img src="https://picsum.photos/400" alt="" />
+            </SwiperSlide>{" "}
+            <SwiperSlide tag="li" className="card__item">
+              <img src="https://picsum.photos/400" alt="" />
+            </SwiperSlide>
+          </Swiper>
+          <div id="swiper-pagination"></div>
         </div>
+
         <figcaption className="card__legende">
           <div className="card__info">
             <span>
