@@ -1,0 +1,47 @@
+.user__account{
+   padding-top: 10px;
+}
+
+.account__header{
+   text-align: center;
+
+   h1{
+      font-size: 2rem;
+      margin-bottom: 5px;
+   }
+
+   p{
+      font-weight: 600;
+      font-size: 1.5rem;
+   }
+}
+
+.user__project{
+   padding-top: 20px;
+
+   .project__categories{
+
+      .categories__list{
+         display: flex;
+         gap: 10px;
+
+         .category{
+
+            figure{
+               display: flex;
+               align-items: center;
+
+               img{
+                  height: 50px;
+                  width: 50px;
+                  border-radius: 100%;
+               }
+
+               figcaption{
+                  margin-left: 10px;
+               }
+            }
+         }
+      }
+   }
+}

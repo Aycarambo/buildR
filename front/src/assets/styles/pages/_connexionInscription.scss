@@ -16,11 +16,11 @@
     width: 100%;
   }
 
-  .connexion__logo {
+  &__logo {
     max-width: 26rem;
   }
 
-  .connexion__choises {
+  &__choises {
     margin-bottom: 3.2rem;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     width: 100%;
   }
 
-  .connexion__btn {
+  &__btn {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -41,9 +41,9 @@
     }
   }
 
-  .connexion__with {
+  &__with {
     display: flex;
-    gap: 8px;
+    gap: 0.8rem;
     margin-bottom: 3.2rem;
 
     button {
@@ -53,13 +53,18 @@
       width: 3.2rem;
       height: 3.2rem;
       border-radius: 2.7rem;
-      border: solid 1px var(--clr-body);
+      border: solid 0.1rem var(--clr-body);
+    }
+
+    ul{
+      display: flex;
+      gap: 0.8rem;
     }
   }
 
-  .connexion__version {
-    font-weight: 300;
-    font-size: 1.4rem;
+  &__version {
+    font-weight: var(--fw-body-s);
+    font-size: var(--fs-body-xs);
     line-height: 1.6rem;
     color: var(--clr-body);
   }
