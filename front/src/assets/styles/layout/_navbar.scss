@@ -1,6 +1,7 @@
 .navbar {
   display: block;
   width: 100%;
+  margin-top: auto;
 
   &__pages {
     margin: 1rem;
@@ -18,12 +19,52 @@
     height: 7rem;
     width: 100%;
 
-    span {
-      font-size: 3.2rem;
-      color: var(--clr-body);
+    & > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 0;
 
-      &.icon-swipe {
-        font-size: 2.5rem;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        content: "";
+        display: block;
+        height: 5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: linear-gradient(
+          90deg,
+          var(--clr-yellow) -0.08%,
+          #edb341 100.08%
+        );
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      & > span {
+        font-size: 3.2rem;
+        color: var(--clr-body);
+        transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &.icon-swipe {
+          font-size: 2.5rem;
+        }
+      }
+
+      &.active {
+        &::after {
+          opacity: 1;
+        }
+
+        & > span {
+          color: white;
+        }
       }
     }
   }

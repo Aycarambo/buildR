@@ -1,34 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import accountUrl from "../assets/images/iconAccount.svg";
-import heartUrl from "../assets/images/iconHeart.svg";
-import mailUrl from "../assets/images/iconMail.svg";
-import swipeUrl from "../assets/images/iconSwipe.svg";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="navbar__pages">
         <li className="navbar__item">
-          <Link to="/">
+          <NavLink to="/" className={({ isActive }) => isActive && "active"}>
             <span className="icon-swipe"></span>
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar__item">
-          <Link to="/likes">
+          <NavLink
+            to="/likes"
+            className={({ isActive }) => isActive && "active"}
+          >
             <span className="icon-heart"></span>
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar__item">
-          <Link to="/messages">
+          <NavLink
+            to="/messages"
+            className={({ isActive }) => isActive && "active"}
+          >
             <span className="icon-messages"></span>
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar__item">
-          <Link to="/account">
+          <NavLink
+            to="/account"
+            className={({ isActive }) => isActive && "active"}
+          >
             <span className="icon-people"></span>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
