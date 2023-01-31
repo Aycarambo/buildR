@@ -9,7 +9,6 @@ import Connexion from "./pages/Connexion";
 import Inscription from "./pages/Inscription";
 import Layout from "./pages/Layout";
 import { Directus } from "@directus/sdk";
-import Conversation from "./pages/Conversation";
 import { useState } from "react";
 
 export const DirectusContext = createContext();
@@ -18,7 +17,7 @@ const directus = new Directus();
 export const UserContext = createContext();
 
 const App = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState({ connected: false });
 
   return (
     <BrowserRouter>

@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import EmailEtMdp from "./EtapesInscription/EmailEtMdp";
-import { DirectusContext } from "../App";
+import { DirectusContext, UserContext } from "../App";
 import Jobs from "./EtapesInscription/Jobs";
 import Budget from "./EtapesInscription/Budget";
 import Recapitulatif from "./EtapesInscription/Recapitulatif";
+import { Navigate } from "react-router-dom";
 
 const Inscription = () => {
   const directus = useContext(DirectusContext);
   const [state, setState] = useState({});
+  const { user, actions } = useContext(UserContext);
+  const { setUser } = actions;
 
   // 1 : email et mdp
   // 2 : choix categories
@@ -18,25 +21,29 @@ const Inscription = () => {
   const appendToState = (obj) => {
     setState({ ...state, ...obj });
   };
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   const changePage = (page) => {
     setCurrentRegistrationStep(page);
   };
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+  // useEffect(() => {
+  //   console.log(state);
+  // }, [state]);
 
   const handleRegister = async () => {
-    console.log(state);
-    // eslint-disable-next-line
-    // const user = await directus.users.createOne({
-    //   email: state.email,
-    //   password: state.pwd,
-    // });
+    let searchingForJobs = [];
+    state.categories.forEach((job) => {
+      searchingForJobs.push({ jobs_id: job.id });
+    });
+
+    const userInBdd = await directus.users.createOne({
+      email: state.email,
+      password: state.pwd,
+      searching_for_jobs: searchingForJobs,
+      budgetMin: state.budget.min,
+      budgetMax: state.budget.max,
+    });
+    setUser({ ...user, connected: true, ...userInBdd });
   };
 
   return (
@@ -60,6 +67,7 @@ const Inscription = () => {
           />
         )}
       </main>
+      {user.connected && <Navigate to="/" replace />}
     </>
   );
 };

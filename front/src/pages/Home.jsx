@@ -4,11 +4,21 @@ import Card from "../components/Card";
 import yellowHeart from "../assets/images/yellow-heart.svg";
 import btnClose from "../assets/images/btn-close-overlay.svg";
 
-import { UserContext } from "../App";
+import { DirectusContext, UserContext } from "../App";
 
 const Home = () => {
+  const directus = useContext(DirectusContext);
   const { user, actions } = useContext(UserContext);
   const { setUser } = actions;
+
+  // const entreprises = directus.items("craftsmen");
+  // entreprises.readByQuery({
+  //   jobs: {
+  //     id: {
+  //       _in: [],
+  //     },
+  //   },
+  // });
 
   return (
     <>
@@ -24,7 +34,7 @@ const Home = () => {
         </div>
       </main>
 
-      {!user && <Navigate to="/connexioninscription" />}
+      {!user.connected && <Navigate to="/connexioninscription" />}
     </>
   );
 };

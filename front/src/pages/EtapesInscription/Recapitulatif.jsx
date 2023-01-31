@@ -1,24 +1,17 @@
 import React, { useState, useContext } from "react";
-import { Navigate } from "react-router-dom";
 
 import { UserContext } from "../../App";
 
 const Recapitulatif = (props) => {
-  const { user, actions } = useContext(UserContext);
-  const { setUser } = actions;
+  const { user } = useContext(UserContext);
 
   const { changePage, inscriptionState, appendToState, handleRegister } = props;
-  inscriptionState.categories.map((category) => {
-    console.log(category);
-  });
 
   const [description, setDescription] = useState("");
 
   const handleSubmit = () => {
     appendToState({ description: description });
-    console.log(inscriptionState);
     handleRegister();
-    setUser(true);
   };
 
   return (
@@ -105,7 +98,6 @@ const Recapitulatif = (props) => {
           </li>
         </ul>
       </main>
-      {user && <Navigate to="/" replace />}
     </>
   );
 };

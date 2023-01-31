@@ -9,9 +9,12 @@ const Jobs = (props) => {
   let selectedJobs = [];
   if (jobs) {
     jobs?.forEach((job) => {
-      console.log("job : ", job);
       if (job.selected) {
-        selectedJobs.push({ label: job.label, imageId: job.imageId });
+        selectedJobs.push({
+          label: job.label,
+          imageId: job.imageId,
+          id: job.id,
+        });
       }
     });
   }
@@ -21,7 +24,6 @@ const Jobs = (props) => {
   useEffect(() => {
     async function fetchJobs() {
       const res = await directus.items("jobs").readByQuery({ limit: -1 });
-      console.log(res.data);
       let tempJobs = [];
       res.data.map((job, index) => {
         tempJobs[index] = {
@@ -29,6 +31,7 @@ const Jobs = (props) => {
           label: job.label,
           imageId: job.image,
           selected: false,
+          id: job.id,
         };
       });
       setJobs(tempJobs);
