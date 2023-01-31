@@ -25,9 +25,7 @@ const Home = () => {
           },
         },
       });
-      const limiteEntreprises = entreprises.data.splice(0, 10);
-      console.log(limiteEntreprises);
-      setEntreprises(limiteEntreprises);
+      setEntreprises(entreprises.data);
     }
     fetchData();
   }, [user.searching_for_jobs, directusEntreprises]);
