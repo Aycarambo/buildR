@@ -1,4 +1,9 @@
 # Buildr
+BuildR est le résultat d'un hackathon React à la licence professionelle MIAW de La Rochelle. Il s'agit d'une app de rencontre entre professionnels du batîment et particuliers en besoin de travaux.
+
+---
+
+
 
 Url du back directus : http://localhost:8055/
 
